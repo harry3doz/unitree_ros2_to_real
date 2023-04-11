@@ -22,12 +22,12 @@ set(CMAKE_CXX_FLAGS "-O3")
 
 include_directories(
     include
-    ${CMAKE_SOURCE_DIR}/unitree_legged_sdk-master/include
+    ${CMAKE_SOURCE_DIR}/unitree_legged_sdk/include
 )
 
 
 
-link_directories(${CMAKE_SOURCE_DIR}/unitree_legged_sdk-master/lib)
+link_directories(${CMAKE_SOURCE_DIR}/unitree_legged_sdk/lib)
 
 add_executable(ros2_udp src/ros2_udp.cpp)
 target_link_libraries(ros2_udp ${EXTRA_LIBS})
