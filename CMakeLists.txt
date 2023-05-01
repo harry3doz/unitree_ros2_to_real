@@ -5,8 +5,10 @@ project(unitree_legged_real)
 
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(geometry_msgs REQUIRED)
 
 find_package(ros2_unitree_legged_msgs REQUIRED)
+
 
 
 message("-- CMAKE_SYSTEM_PROCESSOR: ${CMAKE_SYSTEM_PROCESSOR}")
@@ -31,7 +33,7 @@ link_directories(${CMAKE_SOURCE_DIR}/unitree_legged_sdk/lib)
 
 add_executable(ros2_udp src/ros2_udp.cpp)
 target_link_libraries(ros2_udp ${EXTRA_LIBS})
-ament_target_dependencies(ros2_udp rclcpp ros2_unitree_legged_msgs)
+ament_target_dependencies(ros2_udp rclcpp geometry_msgs ros2_unitree_legged_msgs)
 
 add_executable(ros2_walk_example src/ros2_walk_example.cpp)
 target_link_libraries(ros2_walk_example ${EXTRA_LIBS})
